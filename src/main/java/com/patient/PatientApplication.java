@@ -107,9 +107,4 @@ public class PatientApplication {
         return dbf.newDocumentBuilder().parse(file);
     }
 
-    private void swap(String[] array, int ind1, int ind2) {
-        String tmp = array[ind1];
-        array[ind1] = array[ind2];
-        array[ind2] = tmp;
-    }
 }
