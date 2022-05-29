@@ -21,11 +21,14 @@ public class PatientApplication {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите название файла и способ сортировки результата");
         String fileSort = in.nextLine();
-        fileSort = fileSort.trim();
+        fileSort = fileSort.trim();                                                  //если присутствуют пробелы в начале и конце строки
         String[] params = fileSort.split(" ", 2);
 
+        if(params[0].indexOf(".xml") ==-1){                                         //не обязательно указывать формат файла
+           params[0] = params[0]+".xml";
+        }
 
-        Document doc;
+        Document doc;                                                               //открываем документ
         try{
             doc = buildDocument(params[0]);
         } catch (Exception e){
@@ -33,7 +36,7 @@ public class PatientApplication {
             return;
         }
 
-        Node patientsNode = doc.getFirstChild();
+        Node patientsNode = doc.getFirstChild();                                    //парсим
         NodeList patientsChild = patientsNode.getChildNodes();
 
         List<Patient> patientList = new ArrayList<>();
@@ -73,7 +76,7 @@ public class PatientApplication {
         }
 
 
-        if(params.length == 1){
+        if(params.length == 1){                                         //проверяем входные параметры
             for(int i =0; i < patientList.size();i++){
                 System.out.println(patientList.get(i));
             }
