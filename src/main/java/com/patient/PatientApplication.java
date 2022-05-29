@@ -72,7 +72,6 @@ public class PatientApplication {
             }
             Patient patient = new Patient(firstName, middleName, lastName, age, gender, phone);
             patientList.add(patient);
-//            System.out.println(patientList.get(i/2));
         }
 
 
