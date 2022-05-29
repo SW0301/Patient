@@ -24,7 +24,7 @@ public class PatientApplication {
         fileSort = fileSort.trim();                                                  //если присутствуют пробелы в начале и конце строки
         String[] params = fileSort.split(" ", 2);
 
-        if(params[0].indexOf(".xml") ==-1){                                         //не обязательно указывать формат файла
+        if(!params[0].contains(".xml")){                                         //не обязательно указывать формат файла
            params[0] = params[0]+".xml";
         }
 

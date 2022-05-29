@@ -1,7 +1,8 @@
 package com.patient.model;
 
 
-import java.time.LocalDate;
+
+import static java.lang.String.format;
 
 public class Patient {
 
@@ -72,6 +73,6 @@ public class Patient {
     @Override
     public String toString() {
         return
-                lastName+" "+ firstName + " " + middleName+ " "  + age+ " "  + gender+ " "  + phone  ;
+                format("%20s%20s%16s%4d%8s%16s", lastName, firstName , middleName, age, gender, phone ) ;
     }
 }
