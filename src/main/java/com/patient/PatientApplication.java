@@ -16,7 +16,12 @@ import java.util.*;
 
 public class PatientApplication {
     public static void main(String[] args) {
-        Parse.parse(args);
+        if (args != null && args.length != 0){
+            Parse.parse(args);
+        }
+        else {
+            System.out.println("Введите параметры");
+        }
 
 
     }
